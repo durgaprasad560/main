@@ -1,6 +1,3 @@
-// ignore: duplicate_ignore
-// ignore_for_file: camel_case_types
-
 import 'package:Learner/aptitude.dart';
 import 'package:Learner/splashscreen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
