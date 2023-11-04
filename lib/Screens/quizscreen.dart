@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../models/statistics.dart';
 
-
 class quizapp extends StatefulWidget {
   const quizapp({super.key});
 
@@ -14,22 +13,23 @@ class quizapp extends StatefulWidget {
 
 class _quizappState extends State<quizapp> {
   int? selectedAnswerIndex;
-  int questionIndex=0;
-  int score=0;
-  bool isSolutionVisible=false;
+  int questionIndex = 0;
+  int score = 0;
+  bool isSolutionVisible = false;
 
-  void pickAnswer(int value){
+  void pickAnswer(int value) {
     setState(() {
       selectedAnswerIndex = value;
       final question = questions[questionIndex];
-      if (selectedAnswerIndex == question.correctAnswerIndex){
+      if (selectedAnswerIndex == question.correctAnswerIndex) {
         score++;
       }
     });
   }
-  void goToNextQuestion(){
+
+  void goToNextQuestion() {
     setState(() {
-      if(questionIndex < questions.length - 1){
+      if (questionIndex < questions.length - 1) {
         questionIndex++;
         selectedAnswerIndex = null;
       }
@@ -37,14 +37,15 @@ class _quizappState extends State<quizapp> {
   }
 
   void toggleSolutionVisibility() {
-  setState(() {
-  isSolutionVisible = !isSolutionVisible;
-  });
+    setState(() {
+      isSolutionVisible = !isSolutionVisible;
+    });
   }
+
   @override
   Widget build(BuildContext context) {
-    final question =questions[questionIndex];
-    bool isLastQuestion = questionIndex == questions.length-1;
+    final question = questions[questionIndex];
+    bool isLastQuestion = questionIndex == questions.length - 1;
     return Scaffold(
       backgroundColor: Colors.deepPurple,
       appBar: AppBar(
@@ -56,67 +57,68 @@ class _quizappState extends State<quizapp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("${question.question}",
-              style: TextStyle(fontSize: 23,
-              color: Colors.white,
-              ),
+              Text(
+                "${question.question}",
+                style: TextStyle(
+                  fontSize: 23,
+                  color: Colors.white,
+                ),
                 textAlign: TextAlign.start,
               ),
               ListView.builder(
                   itemCount: question.options.length,
                   shrinkWrap: true,
-                  itemBuilder: (context,index){
+                  itemBuilder: (context, index) {
                     return GestureDetector(
-                      onTap: selectedAnswerIndex == null ? () => pickAnswer(index) : null,
+                      onTap: selectedAnswerIndex == null
+                          ? () => pickAnswer(index)
+                          : null,
                       child: AnswerCard(
-                        currentIndex : index,
-                        question:question.options[index],
-                        isSelected:selectedAnswerIndex == index,
-                        selectedAnswerIndex:selectedAnswerIndex,
-                        correctAnswerIndex:question.correctAnswerIndex,
+                        currentIndex: index,
+                        question: question.options[index],
+                        isSelected: selectedAnswerIndex == index,
+                        selectedAnswerIndex: selectedAnswerIndex,
+                        correctAnswerIndex: question.correctAnswerIndex,
                       ),
                     );
-                  }
+                  }),
+              isLastQuestion
+                  ? RectunglerButton(
+                      onPressed: () {},
+                      lable: 'Finish',
+                    )
+                  : RectunglerButton(
+                      onPressed:
+                          selectedAnswerIndex != null && !isSolutionVisible
+                              ? goToNextQuestion
+                              : null,
+                      lable: 'Next',
+                    ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: toggleSolutionVisibility,
+                    child: Text(
+                      'Solution',
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-
-
-          isLastQuestion ?
-          RectunglerButton(
-            onPressed: (){},
-            lable: 'Finish',
-          )
-          : RectunglerButton(
-            onPressed: selectedAnswerIndex != null  && !isSolutionVisible ? goToNextQuestion : null,
-            lable: 'Next',
-          ),
-
-
-  Column(
-    mainAxisAlignment: MainAxisAlignment.end,
-    children: [
-      GestureDetector(
-      onTap: toggleSolutionVisibility,
-      child: Text(
-      'Solution',
-      style: TextStyle(
-      decoration: TextDecoration.underline,
-      color: Colors.blue,
-      ),
-      ),
-      ),
-    ],
-  ),
-  Visibility(
-  visible: isSolutionVisible,
-  child: Padding(
-  padding: const EdgeInsets.all(16.0),
-  child: Text(
-  '${question.Solution}',
-  style: TextStyle(fontSize: 18),
-  ),
-  ),
-  ),
-
+              Visibility(
+                visible: isSolutionVisible,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    '${question.Solution}',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -124,15 +126,3 @@ class _quizappState extends State<quizapp> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
