@@ -1,4 +1,6 @@
-import 'package:Learner/Screens/quizscreen.dart';
+import 'package:Learner/Screens/pickscreen.dart';
+import 'package:Learner/data/aptitude/aptitudelist.dart';
+import 'package:Learner/data/electrical/electricalList.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_list_tile/simple_list_tile.dart';
 
@@ -101,8 +103,12 @@ class _AptitudeState extends State<Aptitude> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: apt[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,
@@ -232,7 +238,7 @@ class _ElectricalState extends State<Electrical> {
         backgroundColor: Colors.black,
         appBar: AppBar(
           title: Text(
-            'Aptitude',
+            'Electrical',
             style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
@@ -253,8 +259,12 @@ class _ElectricalState extends State<Electrical> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: e[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,
@@ -399,8 +409,12 @@ class _LogicalState extends State<Logical> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: apt[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,
@@ -545,8 +559,12 @@ class _VerbalState extends State<Verbal> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: apt[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,
@@ -691,8 +709,12 @@ class _ElectronicsState extends State<Electronics> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: apt[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,
@@ -837,8 +859,12 @@ class _CivilState extends State<Civil> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: apt[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,
@@ -983,8 +1009,12 @@ class _MechanicalState extends State<Mechanical> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: e[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,
@@ -1129,8 +1159,12 @@ class _AgricultureState extends State<Agriculture> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: apt[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,
@@ -1275,8 +1309,12 @@ class _ComputerState extends State<Computer> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: e[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,
@@ -1421,8 +1459,12 @@ class _ArtificalState extends State<Artifical> {
                 color: const Color.fromARGB(0, 0, 0, 0),
                 child: SimpleListTile(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => quizapp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pickscreen(
+                                  lis: e[i].a,
+                                )));
                   },
                   title: Text(
                     t[i].text,

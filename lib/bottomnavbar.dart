@@ -1,4 +1,4 @@
-import 'package:Learner/aptitude.dart';
+import 'package:Learner/widgets/widgets.dart';
 import 'package:Learner/chatgpt.dart';
 import 'package:Learner/main.dart';
 import 'package:flutter/gestures.dart';

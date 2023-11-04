@@ -12,7 +12,7 @@ class QuestionModel {
   });
 }
 
-List<QuestionModel> questions = [
+List<QuestionModel> digital = [
   QuestionModel(
       question:
           "1. What is the fundamental building block of digital logic circuits?",

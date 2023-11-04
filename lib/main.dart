@@ -1,5 +1,5 @@
-import 'package:Learner/aptitude.dart';
-import 'package:Learner/splashscreen.dart';
+import 'package:Learner/widgets/widgets.dart';
+import 'package:Learner/Screens/splashscreen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:page_route_animator/page_route_animator.dart';
@@ -80,8 +80,8 @@ class _homeState extends State<home> {
         child: GridView.count(
           childAspectRatio: (itemwidth / itemheight),
           crossAxisCount: 2,
-          crossAxisSpacing: 2,
-          mainAxisSpacing: 2,
+          crossAxisSpacing: 15,
+          mainAxisSpacing: 15,
           children: [
             GestureDetector(
               onTap: () {

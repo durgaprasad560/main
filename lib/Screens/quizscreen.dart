@@ -1,11 +1,12 @@
+import 'package:Learner/Screens/resultscreen.dart';
 import 'package:Learner/widgets/answercard.dart';
 import 'package:Learner/widgets/nextbutton.dart';
 import 'package:flutter/material.dart';
 
-import '../models/statistics.dart';
-
 class quizapp extends StatefulWidget {
-  const quizapp({super.key});
+  const quizapp({super.key, required this.wid});
+
+  final List wid;
 
   @override
   State<quizapp> createState() => _quizappState();
@@ -20,7 +21,7 @@ class _quizappState extends State<quizapp> {
   void pickAnswer(int value) {
     setState(() {
       selectedAnswerIndex = value;
-      final question = questions[questionIndex];
+      final question = widget.wid[questionIndex];
       if (selectedAnswerIndex == question.correctAnswerIndex) {
         score++;
       }
@@ -29,7 +30,7 @@ class _quizappState extends State<quizapp> {
 
   void goToNextQuestion() {
     setState(() {
-      if (questionIndex < questions.length - 1) {
+      if (questionIndex < widget.wid.length - 1) {
         questionIndex++;
         selectedAnswerIndex = null;
       }
@@ -44,8 +45,8 @@ class _quizappState extends State<quizapp> {
 
   @override
   Widget build(BuildContext context) {
-    final question = questions[questionIndex];
-    bool isLastQuestion = questionIndex == questions.length - 1;
+    final question = widget.wid[questionIndex];
+    bool isLastQuestion = questionIndex == widget.wid.length - 1;
     return Scaffold(
       backgroundColor: Colors.deepPurple,
       appBar: AppBar(
@@ -84,7 +85,13 @@ class _quizappState extends State<quizapp> {
                   }),
               isLastQuestion
                   ? RectunglerButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (_) => result_screen(
+                                  score: score,
+                                  lis: widget.wid,
+                                )));
+                      },
                       lable: 'Finish',
                     )
                   : RectunglerButton(
