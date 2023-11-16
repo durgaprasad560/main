@@ -1,9 +1,7 @@
-import 'package:Learner/bottomnavbar.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:Learner/pages/AuthChange.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
-
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -19,8 +17,8 @@ class _SplashscreenState extends State<Splashscreen>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 5), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => MyHomePage(title: '',)));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => AuthChange()));
     });
   }
 
@@ -31,17 +29,8 @@ class _SplashscreenState extends State<Splashscreen>
         overlays: SystemUiOverlay.values);
   }
 
-
   @override
   Widget build(BuildContext context) {
-    
-
-const colorizeTextStyle = TextStyle(
-  fontSize: 33.0,
-  fontFamily: 'Horizon',
-  fontWeight: FontWeight.bold
-);
-
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 250, 251, 250),
         // body: Container(
@@ -50,36 +39,44 @@ const colorizeTextStyle = TextStyle(
         // )
         body: Column(
           children: [
-              SizedBox(
-                height: 100,
-              ),
-           AnimatedTextKit(
-            
-    animatedTexts: [
-      
-    WavyAnimatedText('CAREER BOOSTER',textStyle: colorizeTextStyle,),
-    ],
-    isRepeatingAnimation: true,
-   
-  ),
-  
-            Container(height: 550,
+            SizedBox(
+              height: 100,
+            ),
+            Text(
+              "CAREER BOOSTER",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            ),
+            Container(
+              height: 550,
               child: Center(
                 child: Lottie.network(
-                      'https://lottie.host/eaf5fc3e-1c79-406a-ba66-46bb53f4a177/m7uG8N8b1V.json'),
+                    'https://lottie.host/eaf5fc3e-1c79-406a-ba66-46bb53f4a177/m7uG8N8b1V.json'),
               ),
             ),
-            
-              Text('Powered by',style: TextStyle(fontSize: 15,fontWeight: FontWeight.normal,color: Colors.black) ,),
-            RichText(text: TextSpan(
-              text: 'Technical hub',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 3, 135, 58)) ,
-              children  : [
-                TextSpan(text: ' Traines',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black)),
+            Text(
+              'Created by',
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black),
+            ),
+            RichText(
+                text: TextSpan(
+              text: 'Tech Titans',
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 255, 130, 5)),
+              children: [
+                TextSpan(
+                    text: ' Team',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
               ],
             ))
           ],
-        )
-        
-    );
+        ));
   }
 }

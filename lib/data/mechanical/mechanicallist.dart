@@ -14,7 +14,28 @@ class QuestionModel {
   });
 }
 
-List<bits> mec = [];
+List<bits> mec = [
+  bits(a: Aerospace),
+  bits(a: Automotive),
+  bits(a: bearings),
+  bits(a: biomechanics),
+  bits(a: CAD),
+  bits(a: Computational),
+  bits(a: controlsystem),
+  bits(a: fluidflow),
+  bits(a: fluidmechanics),
+  bits(a: fluidpowersystem),
+  bits(a: heattransfer),
+  bits(a: Kinematicsanddynamics),
+  bits(a: machineElements),
+  bits(a: machinedesign),
+  bits(a: manufacturingprocess),
+  bits(a: materialscience),
+  bits(a: mechanics),
+  bits(a: mechatronics),
+  bits(a: solidmechanics),
+  bits(a: thermodynamics),
+];
 
 List<QuestionModel> Aerospace = [
   QuestionModel(
