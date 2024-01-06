@@ -44,7 +44,15 @@ dependencies:
   lottie:
   animated_text_kit: ^4.2.2
   page_route_animator: ^1.0.3
-  animation_list: ^2.2.1 
+  animation_list: ^2.2.1
+  flutter_custom_clippers: ^2.1.0
+  firebase_core: ^2.22.0
+  firebase_auth:
+  flutter_staggered_animations: ^1.1.1
+  solid_bottom_sheet:
+  gradient_borders: ^1.0.0
+  floating_snackbar: ^1.0.3+1
+  image_picker: ^1.0.4
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +86,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/appstore.png
+    - assets\studylottie.json
+    - assets\testlottie.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

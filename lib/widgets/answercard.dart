@@ -35,7 +35,7 @@ class AnswerCard extends StatelessWidget {
                         ? Colors.green
                         : isWrongAnswer
                             ? Colors.red
-                            : Colors.white,
+                            : Color.fromARGB(255, 211, 154, 154),
                   ),
                 ),
                 child: Row(
@@ -45,7 +45,7 @@ class AnswerCard extends StatelessWidget {
                       question,
                       style: const TextStyle(
                         fontSize: 16,
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 0, 0, 0),
                       ),
                     )),
                     const SizedBox(
@@ -63,10 +63,10 @@ class AnswerCard extends StatelessWidget {
                 height: 70,
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: Colors.white24,
+                  color: Color.fromARGB(255, 255, 246, 233),
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 211, 154, 154),
                   ),
                 ),
                 child: Row(
@@ -76,7 +76,7 @@ class AnswerCard extends StatelessWidget {
                       question,
                       style: const TextStyle(
                         fontSize: 16,
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 8, 8, 8),
                       ),
                     )),
                     const SizedBox(

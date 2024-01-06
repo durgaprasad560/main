@@ -1,4 +1,4 @@
-import 'package:Learner/consts.dart';
+import 'package:Learner/pages/consts.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
@@ -34,18 +34,18 @@ class _chatpageState extends State<chatpage> {
         title: Text(
           'Chat GPT',
           style: TextStyle(
+              color: Colors.black,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               fontSize: 23),
         ),
         centerTitle: true,
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 255, 121, 0),
       ),
       body: DashChat(
           currentUser: _cuttentUser,
           typingUsers: _typingUsers,
           messageOptions: MessageOptions(
-            
               containerColor: Colors.black,
               currentUserContainerColor: const Color.fromARGB(255, 7, 7, 7),
               textColor: Colors.white),
@@ -53,7 +53,6 @@ class _chatpageState extends State<chatpage> {
             getChatResponse(m);
           },
           messages: _messages),
-          
     );
   }
 
